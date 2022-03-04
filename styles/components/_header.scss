@@ -1,0 +1,132 @@
+/* Header */
+
+.header {
+  @media screen and (min-width: 1024px) {
+    @include shadow-medium;
+  }
+
+  &__content {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 24px;
+      height: 72px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 1023px) {
+      display: flex;
+      height: 56px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+/* Location */
+
+.location {
+  display: none;
+
+  &__icon {
+    color: $color-content-900;
+  }
+
+  &__button {
+    margin-left: 8px;
+    @include font-body-s-regular;
+
+    &:hover {
+      color: $color-primary-600;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+/* Controls */
+
+.controls {
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__list {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+    }
+  }
+
+  &__link {
+    color: $color-content-900;
+
+    &:hover {
+      color: $color-primary-600;
+    }
+  }
+}
+
+/* Banner */
+
+.banner {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: $color-primary-600;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  &__text {
+    text-align: center;
+    color: $color-base-white;
+    @include font-body-s-regular;
+
+    @media screen and (max-width: 480px) {
+      max-width: 228px;
+    }
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+    color: $color-base-white;
+    cursor: pointer;
+
+    &:first-child {
+      transform: rotate(180deg);
+    }
+
+    &--inactive {
+      color: $color-primary-500;
+    }
+  }
+}

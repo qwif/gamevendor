@@ -8,23 +8,20 @@
     margin-top: 32px;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 360px) and (max-width: 767px) {
     margin-top: 20px;
-    max-width: 312px;
-    height: 448px;
+    height: 520px;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 359px) {
     margin-top: 20px;
-    max-height: 448px;
+    height: 448px;
   }
 
   &__cover {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
     display: block;
     width: 100%;
     z-index: -1;
@@ -35,18 +32,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-
-      @media screen and (min-width: 600px) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      @media screen and (max-width: 767px) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
   }
 

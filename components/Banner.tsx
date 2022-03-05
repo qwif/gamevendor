@@ -4,7 +4,7 @@ export const Banner = () => {
       <picture className="banner__cover">
         <source srcSet="/images/banner-cover-l.png" media="(min-width: 1280px)" />
         <source srcSet="/images/banner-cover-m.png" media="(min-width: 1024px)" />
-        <source srcSet="/images/banner-cover-s.png" media="(min-width: 768px)" />
+        <source srcSet="/images/banner-cover-s.png" media="(min-width: 400px)" />
         <img src="/images/banner-cover-xs.png" />
       </picture>
       <picture className="banner__extra">

@@ -1,14 +1,13 @@
-import { Header } from 'components/Header'
+import { Banner } from 'components/Banner'
+import { Page } from 'layouts/Page'
 import type { NextPage } from 'next'
-import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>gameVendor – Games</title>
-      </Head>
-      <Header />
+      <Page title="Games">
+        <Banner />
+      </Page>
     </>
   )
 }

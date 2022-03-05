@@ -5,14 +5,16 @@ import Link from 'next/link'
 export const Header = () => {
   return (
     <header className="header">
-      <div className="banner">
-        <button className="banner__arrow banner__arrow--inactive" type="button">
+      <div className="notification">
+        <button className="notification__arrow notification__arrow--inactive" type="button">
           <Icon name="arrow-right" />
         </button>
         <Link href="#">
-          <a className="banner__text">Refer a friend and get $10 off! 🔥 Offer ends February 27!</a>
+          <a className="notification__text">
+            Refer a friend and get $10 off! 🔥 Offer ends February 27!
+          </a>
         </Link>
-        <button className="banner__arrow" type="button">
+        <button className="notification__arrow" type="button">
           <Icon name="arrow-right" />
         </button>
       </div>

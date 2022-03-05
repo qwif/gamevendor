@@ -9,7 +9,7 @@ export default function Document() {
         <link rel="preload" href="/fonts/inter-semibold.ttf" as="font" crossOrigin="anonymous" />
         <link href="/favicon.ico" rel="shortcut icon" />
       </Head>
-      <body>
+      <body className="page">
         <Main />
         <NextScript />
       </body>

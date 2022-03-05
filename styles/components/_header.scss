@@ -1,6 +1,8 @@
 /* Header */
 
 .header {
+  background: $color-base-white;
+
   @media screen and (min-width: 1024px) {
     @include shadow-medium;
   }
@@ -81,9 +83,9 @@
   }
 }
 
-/* Banner */
+/* Notification */
 
-.banner {
+.notification {
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 8px;

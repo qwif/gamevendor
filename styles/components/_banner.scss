@@ -1,0 +1,175 @@
+/* Banner */
+
+.banner {
+  width: 100%;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+    max-width: 312px;
+    height: 448px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: 20px;
+    max-height: 448px;
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    z-index: -1;
+
+    source,
+    img {
+      border-radius: 16px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media screen and (min-width: 600px) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__extra {
+    display: none;
+
+    @media screen and (min-width: 1280px) {
+      position: absolute;
+      display: block;
+      right: 98px;
+      bottom: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      position: absolute;
+      display: block;
+      right: 36px;
+      bottom: 0;
+    }
+
+    source,
+    img {
+      display: block;
+
+      @media screen and (min-width: 1280px) {
+        width: 740px;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1280px) {
+      padding: 72px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      padding: 60px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      padding: 40px;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding: 32px;
+    }
+  }
+
+  &__title {
+    color: $color-base-white;
+
+    @media screen and (min-width: 1024px) {
+      max-width: 312px;
+      @include font-display-l;
+    }
+
+    @media screen and (max-width: 1023px) {
+      max-width: 280px;
+      @include font-display-m;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 216px;
+      @include font-display-xs;
+    }
+  }
+
+  &__description {
+    color: $color-base-white;
+
+    @media screen and (min-width: 1024px) {
+      margin-top: 28px;
+      max-width: 312px;
+      @include font-body-m-regular;
+    }
+
+    @media screen and (max-width: 1023px) {
+      margin-top: 20px;
+      max-width: 280px;
+      @include font-body-m-regular;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 16px;
+      max-width: 216px;
+      @include font-body-m-regular;
+    }
+  }
+
+  &__bottom {
+    @media screen and (min-width: 768px) {
+      margin-top: 32px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: auto;
+    }
+  }
+
+  &__button {
+    color: $color-content-900;
+    background: $color-base-white;
+    border: 1px solid $color-content-300;
+    border-radius: 8px;
+    @include font-body-m-medium;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}

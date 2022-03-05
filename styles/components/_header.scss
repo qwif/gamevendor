@@ -8,19 +8,19 @@
   }
 
   &__content {
+    align-items: center;
+
     @media screen and (min-width: 1024px) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 24px;
       height: 72px;
-      align-items: center;
       justify-content: space-between;
     }
 
     @media screen and (max-width: 1023px) {
       display: flex;
       height: 56px;
-      align-items: center;
       justify-content: center;
     }
   }
@@ -31,6 +31,10 @@
 .logo {
   display: flex;
   justify-content: center;
+
+  a {
+    display: flex;
+  }
 }
 
 /* Location */
@@ -39,6 +43,7 @@
   display: none;
 
   &__icon {
+    display: flex;
     color: $color-content-900;
   }
 
@@ -75,6 +80,7 @@
   }
 
   &__link {
+    display: flex;
     color: $color-content-900;
 
     &:hover {
@@ -110,7 +116,14 @@
   &__text {
     text-align: center;
     color: $color-base-white;
-    @include font-body-s-regular;
+
+    @media screen and (min-width: 1024px) {
+      @include font-body-m-regular;
+    }
+
+    @media screen and (max-width: 1023px) {
+      @include font-body-s-regular;
+    }
 
     @media screen and (max-width: 480px) {
       max-width: 228px;

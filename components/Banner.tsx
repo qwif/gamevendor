@@ -18,7 +18,7 @@ export const Banner = () => {
         </div>
         <div className="banner__bottom">
           <button className="banner__button" type="button">
-            Invite a friendd
+            Invite a friend
           </button>
         </div>
       </div>

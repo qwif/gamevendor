@@ -1,0 +1,70 @@
+/* Filter */
+
+.filter {
+  &__wrapper {
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 60px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 32px;
+    }
+  }
+
+  &__items {
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__button {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 16px;
+      display: flex;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 32px;
+    }
+
+    @media screen and (max-width: 1279px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-top: 16px;
+      overflow-x: scroll;
+      white-space: nowrap;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Banner } from 'components/Banner'
+import { Filter } from 'components/Filter'
 import { Page } from 'layouts/Page'
 import type { NextPage } from 'next'
 
@@ -7,6 +8,7 @@ const Home: NextPage = () => {
     <>
       <Page title="Games">
         <Banner />
+        <Filter />
       </Page>
     </>
   )

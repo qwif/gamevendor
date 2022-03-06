@@ -11,11 +11,13 @@
   @media screen and (min-width: 360px) and (max-width: 767px) {
     margin-top: 20px;
     height: 520px;
+    @include shadow-large;
   }
 
   @media screen and (max-width: 359px) {
     margin-top: 20px;
     height: 448px;
+    @include shadow-large;
   }
 
   &__cover {
@@ -133,28 +135,6 @@
 
     @media screen and (max-width: 767px) {
       margin-top: auto;
-    }
-  }
-
-  &__button {
-    color: $color-content-900;
-    background: $color-base-white;
-    border: 1px solid $color-content-300;
-    border-radius: 8px;
-    @include font-body-m-medium;
-
-    @media screen and (min-width: 768px) {
-      padding-left: 18px;
-      padding-right: 18px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    @media screen and (max-width: 767px) {
-      width: 100%;
-      display: inline-block;
-      padding-top: 10px;
-      padding-bottom: 10px;
     }
   }
 }

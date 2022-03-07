@@ -1,4 +1,5 @@
 import { Badge } from 'components/Badge'
+import { Rating } from 'components/Rating'
 import { Product } from 'lib/types/Product.interface'
 import Image from 'next/image'
 import React from 'react'
@@ -39,7 +40,12 @@ export const ProductCard = ({ product, ...props }: ProductCardProps) => {
             <Badge label={product.category} />
           </div>
           <div className="product-card__title">{product.name}</div>
-          <div className="product-card__rating">{product.rating}</div>
+          <div className="product-card__rating">
+            <Rating value={product.rating} />
+            <div className="product-card__reviews">
+              {product.reviewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            </div>
+          </div>
           <div className="product-card__description">{product.description}</div>
         </div>
         <div className="product-card__info--bottom">

@@ -1,0 +1,14 @@
+/* Product List */
+
+.product-list {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 32px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: -32px;
+  }
+}

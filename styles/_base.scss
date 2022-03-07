@@ -24,13 +24,12 @@
 /* Divider */
 
 .divider {
+  width: 100%;
   display: none;
   height: 1px;
 
   &--full {
-    width: 100vw;
     background: $color-content-200;
-
     @media screen and (min-width: 1024px) {
       display: block;
     }
@@ -38,8 +37,7 @@
 
   &--content {
     display: block;
-    width: 100%;
-    background: $color-content-300;
+    background: $color-content-200;
   }
 }
 

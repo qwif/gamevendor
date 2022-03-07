@@ -1,0 +1,60 @@
+/* Badge */
+
+.badge {
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 6px;
+  color: $color-primary-600;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &__label {
+    display: flex;
+    @include font-body-xs;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Appearance */
+
+  &--primary {
+    background: $color-primary-50;
+    color: $color-primary-600;
+  }
+
+  &--red {
+    background: $color-red-50;
+    color: $color-red-600;
+  }
+
+  &--orange {
+    background: $color-orange-50;
+    color: $color-orange-600;
+  }
+
+  &--green {
+    background: $color-green-50;
+    color: $color-green-600;
+  }
+
+  &--blue {
+    background: $color-gray-50;
+    color: $color-gray-600;
+  }
+
+  &--gray {
+    background: $color-primary-50;
+    color: $color-primary-600;
+  }
+
+  &--discount {
+    padding: 2px 6px;
+    background: $color-lime-500;
+    color: $color-base-white;
+    @include font-body-s-medium;
+  }
+}

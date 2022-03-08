@@ -8,14 +8,12 @@ interface ProductListProps {
 }
 
 export const ProductList = ({ data }: ProductListProps) => {
-  const [products, setProducts] = React.useState<Product[]>(data)
-
   return (
     <div className="product-list">
-      {products.length > 0 && (
+      {data.length > 0 && (
         <>
           <AddProductCard />
-          {products.map((item) => (
+          {data.map((item) => (
             <ProductCard product={item} key={item.id} />
           ))}
         </>

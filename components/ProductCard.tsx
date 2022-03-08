@@ -1,6 +1,6 @@
+import { Product } from '@prisma/client'
 import { Badge } from 'components/Badge'
 import { Rating } from 'components/Rating'
-import { Product } from 'lib/types/Product.interface'
 import Image from 'next/image'
 import React from 'react'
 
@@ -11,7 +11,7 @@ interface ProductCardProps extends React.ComponentProps<'div'> {
 export const ProductCard = ({ product, ...props }: ProductCardProps) => {
   return (
     <div className="product-card" {...props}>
-      {product.image.length > 0 ? (
+      {product.image ? (
         <Image
           className="product-card__image"
           src={product.image}
@@ -37,9 +37,9 @@ export const ProductCard = ({ product, ...props }: ProductCardProps) => {
       <div className="product-card__info">
         <div className="product-card__info--top">
           <div className="product-card__category">
-            <Badge label={product.category} />
+            <Badge label={product.category_slug} />
           </div>
-          <div className="product-card__title">{product.name}</div>
+          <div className="product-card__title">{product.title}</div>
           <div className="product-card__rating">
             <Rating value={product.rating} />
             <div className="product-card__reviews">
@@ -57,7 +57,9 @@ export const ProductCard = ({ product, ...props }: ProductCardProps) => {
               <>
                 <div className="price__wrapper">
                   {product.oldPrice > 0 && <div className="price__old">${product.oldPrice}</div>}
-                  <div className="price__current">${product.price}</div>
+                  <div className="price__current">
+                    ${product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                  </div>
                 </div>
                 {product.discount > 0 && (
                   <Badge label={`-${product.discount.toString()}%`} isDiscount />

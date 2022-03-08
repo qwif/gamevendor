@@ -1,19 +1,29 @@
+import { Product } from '@prisma/client'
 import { Banner } from 'components/Banner'
 import { Filter } from 'components/Filter'
 import { ProductList } from 'components/ProductList'
 import { Page } from 'layouts/Page'
-import type { NextPage } from 'next'
+import prisma from 'lib/prisma'
 
-const Home: NextPage = () => {
+interface HomeProps {
+  products: Product[]
+}
+
+export default function Home({ products }: HomeProps) {
   return (
     <>
       <Page title="Games">
         <Banner />
         <Filter />
-        <ProductList />
+        <ProductList data={products} />
       </Page>
     </>
   )
 }
 
-export default Home
+export async function getServerSideProps() {
+  const products = await prisma.product.findMany()
+  return {
+    props: { products },
+  }
+}

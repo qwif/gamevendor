@@ -14,7 +14,7 @@ export const Rating = ({ value, ...props }: RatingProps) => {
   }, [value])
 
   const constructRating = (currentRating: number) => {
-    const updatedArray = ratingArray.map((rating: JSX.Element, index: number) => {
+    const updatedArray = ratingArray.map((rating, index) => {
       return (
         <Icon
           className={cn('rating__star', { ['rating__star--fill-100']: index < currentRating })}
@@ -28,7 +28,9 @@ export const Rating = ({ value, ...props }: RatingProps) => {
 
   return (
     <div className="rating" {...props}>
-      {ratingArray.map((rating) => rating)}
+      {ratingArray.map((rating, index) => (
+        <span key={index}>{rating}</span>
+      ))}
     </div>
   )
 }

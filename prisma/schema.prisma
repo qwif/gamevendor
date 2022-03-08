@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Category {
+  slug     String    @unique
+  name     String    @db.VarChar(100)
+  products Product[]
+}
+
+model Product {
+  id            Int      @id @default(autoincrement())
+  title         String   @db.VarChar(256)
+  description   String   @db.Text
+  image         String?  @db.Text
+  rating        Int      @default(0) @db.Int
+  reviewCount   Int      @default(0) @db.Int
+  price         Int      @default(0) @db.Int
+  oldPrice      Int      @default(0) @db.Int
+  discount      Int      @default(0) @db.Int
+  category      Category @relation(fields: [category_slug], references: [slug], onDelete: Cascade)
+  category_slug String
+}

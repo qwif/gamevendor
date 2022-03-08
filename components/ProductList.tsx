@@ -1,10 +1,10 @@
-import { Product } from '@prisma/client'
+import { Category, Product } from '@prisma/client'
 import { AddProductCard } from 'components/AddProductCard'
 import { ProductCard } from 'components/ProductCard'
 import React from 'react'
 
 interface ProductListProps {
-  data: Product[]
+  data: (Product & { category: Category })[]
 }
 
 export const ProductList = ({ data }: ProductListProps) => {

@@ -1,11 +1,11 @@
-import { Product } from '@prisma/client'
+import { Category, Product } from '@prisma/client'
 import { Badge } from 'components/Badge'
 import { Rating } from 'components/Rating'
 import Image from 'next/image'
 import React from 'react'
 
 interface ProductCardProps extends React.ComponentProps<'div'> {
-  product: Product
+  product: Product & { category: Category }
 }
 
 export const ProductCard = ({ product, ...props }: ProductCardProps) => {
@@ -37,7 +37,7 @@ export const ProductCard = ({ product, ...props }: ProductCardProps) => {
       <div className="product-card__info">
         <div className="product-card__info--top">
           <div className="product-card__category">
-            <Badge label={product.category_slug} />
+            <Badge label={product.category.name} />
           </div>
           <div className="product-card__title">{product.title}</div>
           <div className="product-card__rating">

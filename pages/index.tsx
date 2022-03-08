@@ -1,4 +1,4 @@
-import { Product } from '@prisma/client'
+import { Category, Product } from '@prisma/client'
 import { Banner } from 'components/Banner'
 import { Filter } from 'components/Filter'
 import { ProductList } from 'components/ProductList'
@@ -6,7 +6,7 @@ import { Page } from 'layouts/Page'
 import prisma from 'lib/prisma'
 
 interface HomeProps {
-  products: Product[]
+  products: (Product & { category: Category })[]
 }
 
 export default function Home({ products }: HomeProps) {
@@ -22,7 +22,9 @@ export default function Home({ products }: HomeProps) {
 }
 
 export async function getServerSideProps() {
-  const products = await prisma.product.findMany()
+  const products = await prisma.product.findMany({
+    include: { category: true },
+  })
   return {
     props: { products },
   }

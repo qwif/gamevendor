@@ -6,6 +6,9 @@
   column-gap: 8px;
   color: $color-primary-600;
   cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 
   &__icon {
     display: flex;
@@ -27,7 +30,7 @@
     }
 
     &:hover {
-      background: $color-primary-200;
+      background-color: $color-primary-200;
     }
   }
 
@@ -41,7 +44,7 @@
     }
 
     &:hover {
-      background: $color-primary-200;
+      background-color: $color-primary-200;
     }
   }
 }

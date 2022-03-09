@@ -19,6 +19,9 @@
     background: $color-base-white;
     border: 1px solid $color-content-300;
     border-radius: 8px;
+    transition-property: border;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
 
     &:hover {
       border: 1px solid $color-content-400;

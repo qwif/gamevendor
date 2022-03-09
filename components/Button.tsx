@@ -3,15 +3,15 @@ import { Icon } from 'components/Icon'
 import React from 'react'
 
 interface ButtonProps extends React.ComponentProps<'button'> {
-  size: 'large' | 'medium' | 'small'
-  variant: 'primary' | 'ghost'
+  size?: 'large' | 'medium' | 'small'
+  variant: 'primary' | 'ghost' | 'destructive'
   icon?: string
   iconPosition?: 'left' | 'right'
   children: React.ReactNode
 }
 
 export const Button = ({
-  size,
+  size = 'small',
   variant,
   icon,
   iconPosition = 'left',
@@ -23,6 +23,7 @@ export const Button = ({
       className={cn('button', {
         ['button--primary']: variant == 'primary',
         ['button--ghost']: variant == 'ghost',
+        ['button--destructive']: variant == 'destructive',
         ['button--large']: size == 'large',
         ['button--medium']: size == 'medium',
         ['button--small']: size == 'small',

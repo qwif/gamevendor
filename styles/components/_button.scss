@@ -6,6 +6,9 @@
   justify-content: center;
   column-gap: 8px;
   border-radius: 8px;
+  transition-property: color, background-color;
+  transition-duration: 200ms, 200ms;
+  transition-timing-function: ease-in-out;
   @include font-body-s-medium;
 
   @media screen and (max-width: 767px) {
@@ -24,24 +27,38 @@
     }
   }
 
+  &__label {
+    display: flex;
+  }
+
   /* Appearance */
 
   &--primary {
-    background: $color-primary-600;
+    background-color: $color-primary-600;
     color: $color-base-white;
 
     &:hover {
-      background: $color-primary-700;
+      background-color: $color-primary-700;
     }
   }
 
   &--ghost {
-    background: $color-base-white;
+    background-color: $color-base-white;
     color: $color-content-900;
     border: 1px solid $color-content-300;
 
     &:hover {
       color: $color-primary-600;
+    }
+  }
+
+  &--destructive {
+    padding: 8px !important;
+    background-color: $color-destructive-600;
+    color: $color-base-white;
+
+    &:hover {
+      background-color: $color-destructive-700;
     }
   }
 
@@ -57,6 +74,4 @@
   &--small {
     padding: 8px 14px;
   }
-
-  // TODO: Add responsive styles for sizes
 }

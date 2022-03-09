@@ -1,0 +1,91 @@
+/* FAQ */
+
+.faq {
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 80px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    padding-top: 60px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      text-align: center;
+      row-gap: 20px;
+    }
+
+    @media screen and (max-width: 767px) {
+      text-align: left;
+      row-gap: 16px;
+    }
+  }
+
+  &__title {
+    color: $color-content-900;
+
+    @media screen and (min-width: 768px) {
+      @include font-display-m;
+    }
+
+    @media screen and (max-width: 767px) {
+      @include font-display-xs;
+    }
+  }
+
+  &__description {
+    color: $color-content-500;
+    @include font-body-m-regular;
+  }
+
+  &__items {
+    > div:not(:first-child) {
+      border-top: 1px solid $color-content-200;
+    }
+  }
+}
+
+/* Item */
+
+.faq-item {
+  &__header {
+    button {
+      width: 100%;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    color: $color-content-900;
+    @include font-body-l;
+  }
+
+  &__icon {
+    margin-left: 24px;
+    display: flex;
+    color: $color-primary-600;
+  }
+
+  &__content {
+    padding: 0;
+    height: 0px;
+    overflow: hidden;
+
+    &--opened {
+      padding-bottom: 40px;
+      height: fit-content;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { Icon } from 'components/Icon'
 import Head from 'next/head'
@@ -13,7 +14,7 @@ export const Page = ({ title, children }: PageProps) => {
   return (
     <>
       <Head>
-        <title>gameVendor – {title}</title>
+        <title>{title} – gameVendor</title>
       </Head>
       <Header />
       <div className="page__breadcrumbs breadcrumbs container">
@@ -33,6 +34,7 @@ export const Page = ({ title, children }: PageProps) => {
       </div>
       <h2 className="page__title container">{title}</h2>
       <main className="container">{children}</main>
+      <Footer />
     </>
   )
 }

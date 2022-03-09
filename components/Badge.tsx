@@ -11,12 +11,12 @@ export const Badge = ({ label, isDiscount, ...props }: BadgeProps) => {
   return (
     <div
       className={cn('badge', {
-        ['badge--primary']: label == 'shooter',
-        ['badge--red']: label == 'mmo-rpg',
-        ['badge--orange']: label == 'action',
-        ['badge--green']: label == 'card-game',
-        ['badge--gray']: label == 'strategy',
-        ['badge--blue']: label == 'action-rpg',
+        ['badge--primary']: label == 'Shooter',
+        ['badge--red']: label == 'Multiplayer RPG',
+        ['badge--orange']: label == 'Action',
+        ['badge--green']: label == 'Card Game',
+        ['badge--gray']: label == 'Strategy',
+        ['badge--blue']: label == 'Action RPG',
         ['badge--discount']: isDiscount,
       })}
       {...props}

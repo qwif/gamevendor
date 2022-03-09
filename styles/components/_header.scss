@@ -49,6 +49,9 @@
 
   &__button {
     margin-left: 8px;
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
     @include font-body-s-regular;
 
     &:hover {
@@ -82,6 +85,9 @@
   &__link {
     display: flex;
     color: $color-content-900;
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
 
     &:hover {
       color: $color-primary-600;

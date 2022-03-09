@@ -1,5 +1,6 @@
 import { Category, Product } from '@prisma/client'
 import { Banner } from 'components/Banner'
+import { FAQ } from 'components/FAQ'
 import { Filter } from 'components/Filter'
 import { ProductList } from 'components/ProductList'
 import { Page } from 'layouts/Page'
@@ -16,6 +17,7 @@ export default function Home({ products }: HomeProps) {
         <Banner />
         <Filter />
         <ProductList data={products} />
+        <FAQ />
       </Page>
     </>
   )

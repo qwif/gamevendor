@@ -18,27 +18,29 @@ export const ProductCard = ({ product, ...props }: ProductCardProps) => {
           <Icon name="close" />
         </Button>
       </div>
-      {product.image ? (
-        <Image
-          className="product-card__image"
-          src={product.image}
-          placeholder="blur"
-          blurDataURL="/images/product-image-placeholder.png"
-          width={256}
-          height={200}
-          quality={100}
-          alt="Product Image"
-        />
-      ) : (
-        <Image
-          className="product-card__image"
-          src="/images/product-image-placeholder.png"
-          width={256}
-          height={200}
-          quality={100}
-          alt="Product Image"
-        />
-      )}
+      <div className="product-card__image">
+        {product.image ? (
+          <Image
+            src={product.image}
+            placeholder="blur"
+            blurDataURL="/images/product-image-placeholder.png"
+            width={512}
+            height={400}
+            quality={100}
+            objectFit="fill"
+            alt="Product Image"
+          />
+        ) : (
+          <Image
+            src="/images/product-image-placeholder.png"
+            width={256}
+            height={200}
+            quality={100}
+            objectFit="fill"
+            alt="Product Image"
+          />
+        )}
+      </div>
       <div className="product-card__info">
         <div className="product-card__info--top">
           <div className="product-card__category">

@@ -25,6 +25,11 @@ export default function Home({ products }: HomeProps) {
 
 export async function getServerSideProps() {
   const products = await prisma.product.findMany({
+    orderBy: [
+      {
+        id: 'desc',
+      },
+    ],
     include: { category: true },
   })
   return {
